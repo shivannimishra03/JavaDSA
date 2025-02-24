@@ -1,20 +1,20 @@
 package Lec3;
 import java.util.*;
-public class Pattern14 {
+public class Pattern15 {
     public static void main(String[]args){
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        int star = 1;
-        int space = n-1;
         int row = 1;
-        while(row <= 2*n-1){
+        int star = n;
+        int space = 0;
+        while (row <= 2*n-1){
             //space
             int i = 1;
-            while(i <= space){
+            while( i <= space){
                 System.out.print("  ");
                 i++;
             }
-            //star
+            //star 
             int j = 1;
             while ( j <= star){
                 System.out.print("* ");
@@ -22,17 +22,17 @@ public class Pattern14 {
             }
             //mirror
             if (row < n){
-                star++;
-                space--;
+                star--;
+                space+=2;
             }
             else{
-                star--;
-                space++;
+                star++;
+                space-=2;
             }
-            System.out.println();
+            //next row prep
             row++;
+            System.out.println();
         }
-
-        
     }
+    
 }
